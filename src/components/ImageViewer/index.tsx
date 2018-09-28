@@ -1,7 +1,7 @@
 import * as React from 'react'
 import './index.scss'
 import classnames from 'classnames'
-import WxImageViewer from 'react-wx-images-viewer'
+import WxImageViewer from 'components/ReactImageViewer'
 
 export interface IImageViewerState {
     imgUrls?: string[];
