@@ -1,0 +1,86 @@
+@import "~scss/index.scss";
+
+.friends-news {
+  padding: 5px $common-padding;
+  border-bottom: 1px solid #ccc;
+  overflow: hidden;
+
+  &-avator {
+    background-color: #ccc;
+    $h: 40px;
+    width: $h;
+    height: $h;
+    float: left;
+  }
+
+  &-container {
+    overflow: hidden;
+    padding-left: 8px;
+    font-size: 12px;
+    color: #8e8e8e;
+    $h: 26px;
+
+    .news-name,
+    .new-address {
+      color: $active-color;
+      line-height: 1;
+    }
+    .new-container {
+      color: #333;
+      margin: 5px 0;
+    }
+    .news-from {
+      margin-left: 10px;
+    }
+
+    .other-wrap {
+      margin-top: 4px;
+      height: $h;
+      line-height: $h;
+    }
+
+    .control-wrap {
+      float: right;
+      position: relative;
+    }
+
+    .control-btn {
+      float: right;
+    }
+    .control-like, .control-review {
+      width: 70px;
+      display: inline-block;
+      position: relative;
+    }
+
+    .control-review:before {
+      background: #fff;
+      width: 1px;
+      position: absolute;
+      left: 0;
+      $top:3px;
+      top:$top;
+      content: '';
+      height: $h - 2*$top;
+    }
+    .control-container {
+      position: absolute;
+      height: $h;
+      right: 110%;
+      background-color: rgba(0, 0, 0, .8);
+      color: #fff;
+      border-radius: 1px;
+      text-align: center;
+      width: 160px;
+      transition: .5s all;
+      transform: scale(0, 1);
+      transform-origin: right center;
+      &.show {
+        transform: scale(1, 1);
+      }
+      .iconfont{
+        padding:0 7px;
+      }
+    }
+  }
+}

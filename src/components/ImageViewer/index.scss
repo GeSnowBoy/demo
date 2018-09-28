@@ -1,0 +1,40 @@
+@import '~scss/index.scss';
+
+.imageview-wrap {
+  font-size: 0;
+  $width: 32;
+  $margin-right: (100 - 3*$width)/2 *1%;
+  .img-type-normal {
+
+    width: $width * 1%;
+    margin-right: $margin-right;
+    padding-top: $width *1%;
+    display: inline-block;
+    margin-bottom: $margin-right;
+    background-size: cover;
+    background-position: center center;
+    background-color:#ccc ;
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+    &:nth-child(  n + 10) {
+      display: none;
+    }
+  }
+
+  .img-type-one {
+    width: auto;
+    height: auto;
+    max-width: 70%;
+    min-width: 30%;
+    max-height: 100px;
+  }
+  .img-type-two {
+    &:nth-child(2) {
+      margin-right: 30%;
+    }
+    &:nth-child(3) {
+      margin-right: $margin-right;
+    }
+  }
+}

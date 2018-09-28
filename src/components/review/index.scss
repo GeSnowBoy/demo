@@ -1,0 +1,33 @@
+@import '~scss/index.scss';
+
+.news-review {
+    background: #ccc;
+    padding: 4px;
+    border-radius: 2px;
+    position: relative;
+    margin-top: 4px;
+    line-height: 18px;
+    .likes-wrap{
+        color:$active-color;
+        border-bottom: 1px solid $normal-color;
+        padding: 3px;
+        margin:0 -3px 2px;
+        .iconfont{
+            margin-right: 5px;
+        }
+        &.no-border-bottom{
+            border-bottom: none;
+        }
+    }
+    .arrow {
+        position: absolute;
+        left: 10px;
+        bottom: 100%;
+        @include arrow('top', 4px, #ccc, 6px);
+
+    }
+    .answer,
+    .receive{
+        color:$active-color;
+    }
+}
