@@ -58,7 +58,9 @@
     "@types/react-dom": "^16.0.7",
     "classnames": "^2.2.6",
     "immutable": "^3.8.2",
+    "react-redux": "^5.0.7",
     "react-wx-images-viewer": "^1.0.6",
+    "redux": "^4.0.0",
     "typescript": "^3.0.3"
   },
   "jest": {

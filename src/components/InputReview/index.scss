@@ -1,0 +1,27 @@
+.friend-input-wrap {
+  height: 30px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #efefef;
+  padding: 5px 20px;
+  display: flex;
+  input {
+    flex: 1;
+    outline: none;
+    background-color: transparent;
+    border:none;
+    border-bottom: 1px solid green;
+  }
+  button {
+    margin-left: 10px;
+    padding: 3px 6px;
+    border-radius: 4px;
+    border: 1px solid green;
+    background-color: green;
+    color:#fff;
+    outline: none;
+    line-height: 1;
+  }
+}

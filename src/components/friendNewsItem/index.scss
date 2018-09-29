@@ -4,7 +4,9 @@
   padding: 5px $common-padding;
   border-bottom: 1px solid #ccc;
   overflow: hidden;
-
+  &:last-child {
+    border-bottom: none;
+  }
   &-avator {
     background-color: #ccc;
     $h: 40px;
@@ -58,8 +60,8 @@
       width: 1px;
       position: absolute;
       left: 0;
-      $top:3px;
-      top:$top;
+      $top: 3px;
+      top: $top;
       content: '';
       height: $h - 2*$top;
     }
@@ -78,8 +80,8 @@
       &.show {
         transform: scale(1, 1);
       }
-      .iconfont{
-        padding:0 7px;
+      .iconfont {
+        padding: 0 7px;
       }
     }
   }

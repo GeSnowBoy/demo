@@ -4,7 +4,7 @@ import classnames from 'classnames'
 export interface IIcon {
     icon: string;
 
-    onClick?(): void;
+    onClick?(e:any): void;
 }
 
 export default class Icon extends React.Component<IIcon, any> {

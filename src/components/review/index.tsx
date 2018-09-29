@@ -2,6 +2,9 @@ import * as React from "react";
 import "./index.scss";
 import {IUser} from 'components/friendHeader'
 import Icon from 'components/Icon'
+import {connect} from 'react-redux'
+import {bindActionCreators} from 'redux'
+import {constrolInput, setActionNews} from 'store/actions'
 
 export interface IReview {
     answer: string;
@@ -10,16 +13,26 @@ export interface IReview {
 }
 
 export interface IReviewProps {
-
+    newsId: number;
     likes: IUser[];
     reviewList: IReview[];
 
+    constrolInput(isShow: boolean): any;
+
+    setActionNews(isShow: number): any;
 }
 
-export default class Review extends React.Component<IReviewProps, any> {
+class Review extends React.Component<IReviewProps, any> {
+    public showInput = (e: React.MouseEvent<HTMLElement>) => {
+        e.preventDefault();
+        e.stopPropagation()
+        this.props.setActionNews(this.props.newsId)
+        this.props.constrolInput(true)
+    }
+
     public _renderItem(item: IReview, index: number) {
         return (
-            <div key={index}>
+            <div key={index} onClick={this.showInput}>
                 <span className="answer">{item.answer}</span>
                 {item.receive ? (
                     <React.Fragment>
@@ -60,3 +73,11 @@ export default class Review extends React.Component<IReviewProps, any> {
         ) : null;
     }
 }
+
+export default connect(
+    (state: any) => state,
+    (dispatch: any) => ({
+        constrolInput: bindActionCreators(constrolInput, dispatch),
+        setActionNews: bindActionCreators(setActionNews, dispatch)
+    })
+)(Review)

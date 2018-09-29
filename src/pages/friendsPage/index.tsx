@@ -1,38 +1,45 @@
 import * as React from "react";
 import FriendHeader from "components/friendHeader/index";
 import FriendNewsItem from "components/friendNewsItem/index";
+import InputReview from "components/InputReview";
+import {connect} from 'react-redux'
 import "./index.scss";
-import mock from '../../mock'
+import {bindActionCreators} from 'redux'
+import {constrolInput, setActionControll} from 'store/actions'
 
-export default class FriendPage extends React.Component {
+class FriendPage extends React.Component<any, any> {
 
-    public state = {
-        ...mock
-    }
-    public toggleLike = (id: number) => {
-        const friendItem: any = this.state.friendBody.find(item => item.id === id)
-        friendItem.isLike = !friendItem.isLike
-        if (friendItem.isLike) {
-            friendItem.likes.unshift(mock.user)
-        } else {
-            friendItem.likes.splice(friendItem.likes.findIndex((item: any) => item.name === mock.user.name), 1)
-        }
-        this.setState({})
+
+    public hideInput = (e: any) => {
+        this.props.constrolInput(false)
+        this.props.setActionControll(-1)
     }
 
     public render() {
-        const {state} = this;
+        const {props} = this;
         return (
-            <div>
+            <div className={'friend-page'} onClick={this.hideInput}>
                 <FriendHeader
-                    {...state.friendHeader}
+                    {...props.friendHeader}
                 />
                 <div className="friends-body">
-                    {state.friendBody.map((item: any, index: number) => {
-                        return <FriendNewsItem key={item.id} {...item} toggleLike={this.toggleLike}/>
+                    {props.friendBody.map((item: any, index: number) => {
+                        return <FriendNewsItem key={item.id} {...item} />
                     })}
                 </div>
+                {this.props.isWrite ? <InputReview/> : null}
             </div>
         );
     }
 }
+
+export default connect((state: any) => {
+    return {
+        ...state
+    }
+}, (dispath: any) => {
+    return {
+        constrolInput: bindActionCreators(constrolInput, dispath),
+        setActionControll: bindActionCreators(setActionControll, dispath)
+    }
+})(FriendPage)
