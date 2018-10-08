@@ -1,7 +1,7 @@
 @import '~scss/index.scss';
 
 .news-review {
-  $bg-color: rgba(204, 204, 204, 0.5);
+  $bg-color:$color-review-bg;
   background: $bg-color;
   padding: 4px;
   border-radius: 2px;
@@ -9,8 +9,8 @@
   margin-top: 4px;
   line-height: 18px;
   .likes-wrap {
-    color: $active-color;
-    border-bottom: 1px solid $normal-color;
+    color: $color-title-font;
+    border-bottom: 1px solid $color-review-line;
     padding: 3px;
     margin: 0 -3px 2px;
     .iconfont {
@@ -24,7 +24,7 @@
     position: absolute;
     left: 10px;
     bottom: 100%;
-    @include arrow('top', 4px, $bg-color, 6px);
+    @include arrow('top', 8px, $bg-color, 6px);
 
   }
   .answer,

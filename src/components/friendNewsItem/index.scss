@@ -1,8 +1,8 @@
 @import "~scss/index.scss";
 
 .friends-news {
-  padding: 5px $common-padding;
-  border-bottom: 1px solid #ccc;
+  padding: 8px $common-padding 15px;
+  border-bottom: 1px solid $color-review-line;
   overflow: hidden;
   &:last-child {
     border-bottom: none;
@@ -24,7 +24,7 @@
 
     .news-name,
     .new-address {
-      color: $active-color;
+      color: $color-title-font;
       line-height: 1;
     }
     .new-container {
@@ -39,6 +39,7 @@
       margin-top: 4px;
       height: $h;
       line-height: $h;
+      color:$color-sub-font;
     }
 
     .control-wrap {

@@ -20,7 +20,7 @@ export default {
       content: '这是内容哦???????????????',
       from: '口袋精灵E',
       id: 1,
-      imgs: getRandomImgs(),
+      imgs: [getRandomImg()],
       isLike: false,
       likes: [],
       reviewList: [
