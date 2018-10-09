@@ -7,21 +7,27 @@
   background-color: #efefef;
   padding: 5px 20px;
   display: flex;
+  $color-green: #1aae15;
   input {
     flex: 1;
     outline: none;
     background-color: transparent;
-    border:none;
-    border-bottom: 1px solid green;
+    border: none;
+    border-bottom: 1px solid $color-green;
   }
   button {
     margin-left: 10px;
     padding: 3px 6px;
     border-radius: 4px;
-    border: 1px solid green;
-    background-color: green;
-    color:#fff;
+    border: 1px solid #ccc;
+    background-color: transparent;
+    color: #ccc;
     outline: none;
     line-height: 1;
+    &.active {
+      color: #fff;
+      border: 1px solid $color-green;
+      background-color: $color-green;
+    }
   }
 }

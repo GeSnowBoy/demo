@@ -1,7 +1,8 @@
 import * as React from 'react'
-import {connect} from 'react-redux'
 import {addReview} from 'store/actions'
 import {bindActionCreators} from 'redux'
+import classnames from 'classnames'
+import {connect} from "react-redux";
 import "./index.scss"
 
 class InputReview extends React.Component<any, any> {
@@ -45,7 +46,8 @@ class InputReview extends React.Component<any, any> {
                     type="text" placeholder={'评论'}
 
                     ref={input => this.inputChildren = input}/>
-                <button onClick={this.commitInput}>发送</button>
+                <button onClick={this.commitInput} className={classnames({'active': this.state.input.length})}>发送
+                </button>
             </div>
         )
     }

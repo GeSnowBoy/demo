@@ -18,7 +18,10 @@ class FriendsPage extends React.Component<IfriendHeader, any> {
         return <div className="friends-header" style={{backgroundImage: `url(${bgImg})`}}>
             <div className="avatar-wrap">
                 <span className="people-nickname">{user.name} </span>
-                <img src={user.avator} className="avatar-img"/>
+                <div className="avatar-img-wrap">
+                    <img src={user.avator} className="avatar-img"/>
+
+                </div>
             </div>
         </div>;
     }

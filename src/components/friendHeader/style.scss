@@ -23,11 +23,17 @@ $avatar-border-width: 3px;
     padding: 15px 10px 0;
     display: inline-block;
   }
+  .avatar-img-wrap{
+    border:.5px solid #ccc;
+    float: right;
+    font-size: 0;
+  }
   .avatar-img {
     background-color: #ccc;
     width: $avatar-h;
     height: $avatar-h;
-    border: 3px solid #fff;
-    float: right;
+    border: 2px solid #fff;
+
+
   }
 }

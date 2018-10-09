@@ -46,6 +46,7 @@ class FriendNewsItem extends React.Component<IFriendNewsItemProps, any> {
         e.stopPropagation();
         this.props.setActionNews(this.props.id)
         this.props.constrolInput(true)
+        this.props.setActionControll(-1)
     }
 
     public render() {
@@ -87,9 +88,9 @@ class FriendNewsItem extends React.Component<IFriendNewsItemProps, any> {
                         </div>
 
                     </div>
-                    {(props.reviewList.length || props.likes.length) &&
-                    <Review reviewList={props.reviewList} likes={props.likes} id={props.likes.length}
-                            newsId={props.id}/>}
+                    {(props.reviewList.length || props.likes.length) ?
+                        <Review reviewList={props.reviewList} likes={props.likes} id={props.likes.length}
+                                newsId={props.id}/> : null}
                 </div>
             </div>
         )
@@ -97,9 +98,10 @@ class FriendNewsItem extends React.Component<IFriendNewsItemProps, any> {
 }
 
 export default connect(
-    (state: any) => {
+    (state: any, Props: any) => {
         return {
-            ...state
+            ...state,
+            ...Props
         }
     },
     (dispath: any) => {
